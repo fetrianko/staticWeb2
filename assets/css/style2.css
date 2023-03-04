@@ -1,0 +1,302 @@
+/* ? deklarasi variabel */
+:root {
+    --primary: rgba(46, 2, 87, 1);
+    --secondary: rgba(101, 56, 143, 1);
+    /* --tertiary: rgba(148, 85, 207, 1);
+    --quarternary: rgba(185, 151, 216, 1); */
+    --secondary-fade: rgba(101, 56, 143, 0.3);
+    --light: rgba(242, 242, 242, 1);
+    --shadow: 0px 1px 5px rgba(104, 104, 104, 0.8);
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    overflow-x: hidden;
+    background: url('../img/paw-pattern.webp') center/cover;
+    background-repeat: repeat;
+  }
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    color: var(--light);
+    min-height: 10vh;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+  }
+  .nav-scroll {
+    background-color: var(--primary);
+  }
+  nav .nav-active {
+    transform: translateX(0%);
+  }
+  .logo {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  nav .logo .highlight {
+    color: aquamarine;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10vh;
+    position: absolute;
+    right: 0px;
+    height: 100vh;
+    top: 0;
+    width: 45vw;
+    background-color: var(--primary);
+    list-style: none;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    letter-spacing: 1px;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--light);
+    font-weight: 300;
+  }
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    position: relative;
+    z-index: 1;
+    padding: 0.7em;
+    border-radius: 4px;
+    background-color: var(--secondary);
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  .burger .line-1, .burger .line-2, .burger .line-3 {
+    width: 1.2em;
+    height: 0.2rem;
+    background-color: var(--light);
+    border-radius: 2px;
+    transition: all 0.5s ease;
+  }
+  .jumbotron {
+    position: relative;
+  }
+  .jumbotron img{
+    width: 100%;
+    position: relative;
+    border-radius: 0px 0px 8px 8px;
+  }
+  .jumbotron h1 {
+    position: absolute;
+    padding: .4em 1em;
+    background-color: var(--secondary);
+    color: var(--light);
+    border-radius: 6px;
+    bottom: -0.5em;
+    left: 5%;
+    transform: rotate(-3deg);
+  }
+  .card {
+    margin: 1rem;
+    padding: 1.3rem;
+    text-align: justify;
+    background-color: var(--light);
+    box-shadow: var(--shadow);
+    border-radius: 6px;
+  }
+  #desc {
+    margin-top: 2rem;
+  }
+  #desc p:nth-child(1) {
+    margin-bottom: 1rem;
+  }
+  nav .nav-links .nav-links-fade-out {
+    animation: navLinkFadeOut 0.5s ease !important;
+  }
+  .toggle {
+    border-radius: 50%;
+  }
+  .toggle .line-1 {
+    /* transform: rotate(-45deg) translateY(6px) translateX(-6px); */
+    transform: rotate(-45deg) translateY(0.45rem) translateX(-0.45rem);
+  }
+  .toggle .line-2 {
+    opacity: 0;
+  }
+  .toggle .line-3 {
+    /* transform: rotate(45deg) translateY(-6px) translateX(-5px); */
+    transform: rotate(45deg) translateY(-0.45rem) translateX(-0.45rem);
+  }
+  .title {
+    display: flex;
+    padding-left: 2.2rem;
+    gap: 1em;
+  }
+  .title i {
+    align-self: flex-end;
+    font-size: 2rem;
+    color: var(--primary);
+  }
+  .title .fa-thumbtack {
+    transform: rotate(40deg);
+  }
+  .title h2 {
+    display: inline-block;
+    padding: .4em 1em;
+    background-color: var(--secondary);
+    color: var(--light);
+    border-radius: 6px;
+    transform: rotate(-3deg);
+  }
+  #tentang .card, #karakter .card{
+    display: flex;
+    flex-direction: column;
+  }
+  .info-group {
+    margin-top: 1em;
+  }
+  .info-group-2 {
+    margin-top: 0.7em;
+  }
+  #karakter .info-group {
+    display: flex;
+  }
+  #karakter .info-group i {
+    font-size: 2.5rem;
+  }
+  .info-left {
+    flex-basis: 35%;
+    margin: 0px 0.5em;
+  }
+  .info-right {
+    flex-basis: 65%;
+    margin: 0px 0.5em;
+  }
+  .info-left {
+    border: 1px solid blue;
+  }
+  .info-right {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .info-right li{
+    list-style: none;
+  }
+  .secondary {
+    color: var(--secondary);
+  }
+  .secondary-fade {
+    color: var(--secondary-fade);
+  }
+  @keyframes navLinkFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  @keyframes navLinkFadeOut {
+    from {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  @media (min-width:480px) {
+    #tentang .card{
+      flex-direction: row;
+    }
+    #tentang .left, #tentang .right {
+      flex-basis: 50%;
+    }
+  }
+  @media (min-width:768px) {
+    main {
+      padding: 0rem 7rem;
+    }
+    section {
+      margin: 1rem 2.2rem;
+    }
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: unset;
+      align-items: unset;
+      position: unset;
+      padding-top: unset;
+      height: unset;
+      width: unset;
+      background-color: unset;
+      transform: none;
+      transition: none;
+      gap: 0.7rem;
+    }
+    nav .nav-links .nav-links-fade-out {
+      animation: none !important;
+    }
+    .nav-links a {
+      opacity: 1;
+    }
+    .burger {
+      display: none;
+    }
+  }
+  @media (min-width: 1025px) {
+    #karakter .card {
+      flex-direction: row;
+    }
+    .left, .right {
+      flex-basis: 50%;
+    }
+  }
+  /* font sizes */
+  @media (min-width: 858px) {
+    html {
+        font-size: 17px;
+    }
+  }
+  
+  @media (min-width: 780px) {
+    html {
+        font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 702px) {
+    html {
+        font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 624px) {
+    html {
+        font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 623px) {
+    html {
+        font-size: 13px;
+    }
+    .jumbotron h1 {
+      font-size: 1.7rem;
+    }
+  }
